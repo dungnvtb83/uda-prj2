@@ -61,6 +61,11 @@ const util_1 = require("./util/util");
             res.status(404).send('Not found');
         }
     }));
+    // Root Endpoint
+    // Displays a simple message to the user
+    app.get("/", (req, res) => __awaiter(this, void 0, void 0, function* () {
+        res.send("try GET /filteredimage?image_url={{}}");
+    }));
     // Start the Server
     app.listen(port, () => {
         console.log(`server running http://localhost:${port}`);

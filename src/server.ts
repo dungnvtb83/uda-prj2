@@ -54,7 +54,12 @@ import {filterImageFromURL, deleteLocalFiles, validURL} from './util/util';
     } else  {
       res.status(404).send('Not found');
     }
+  } );
 
+  // Root Endpoint
+  // Displays a simple message to the user
+  app.get( "/", async ( req, res ) => {
+    res.send("try GET /filteredimage?image_url={{}}")
   } );
   
 
