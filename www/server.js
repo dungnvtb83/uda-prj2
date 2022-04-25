@@ -43,14 +43,14 @@ const util_1 = require("./util/util");
         if (obj
             && Object.keys(obj).length === 0
             && Object.getPrototypeOf(obj) === Object.prototype)
-            res.status(404).send('Not found');
+            res.status(422).send('Unprocessable Entity');
         const { image_url } = obj;
         if (image_url && util_1.validURL(image_url)) {
             const filteredpath = yield util_1.filterImageFromURL(image_url);
             res.sendFile(filteredpath, {}, function (err) {
                 if (err) {
                     console.log(err);
-                    res.status(404).send('Not found');
+                    res.status(422).send('Unprocessable Entity');
                 }
                 else {
                     util_1.deleteLocalFiles([filteredpath]);
@@ -58,7 +58,7 @@ const util_1 = require("./util/util");
             });
         }
         else {
-            res.status(404).send('Not found');
+            res.status(422).send('Unprocessable Entity');
         }
     }));
     // Root Endpoint
