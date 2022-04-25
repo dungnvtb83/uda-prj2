@@ -33,11 +33,11 @@ import {filterImageFromURL, deleteLocalFiles, validURL} from './util/util';
   
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/filteredimage", async ( req, res ) => {
+  app.get( "/filteredimage", async (req:express.Request, res:express.Response) => {
     const obj = req.query;
     if (obj
       && Object.keys(obj).length === 0
-      && Object.getPrototypeOf(obj) === Object.prototype) res.status(404).send('Not found');
+      && Object.getPrototypeOf(obj) === Object.prototype) res.status(422).send('Unprocessable Entity');
     const { image_url } = obj;
 
     if (image_url && validURL(image_url)) {
@@ -46,19 +46,19 @@ import {filterImageFromURL, deleteLocalFiles, validURL} from './util/util';
       res.sendFile(filteredpath, {}, function (err) {
         if (err) {
             console.log(err);
-            res.status(404).send('Not found');
+            res.status(422).send('Unprocessable Entity');
         } else {
             deleteLocalFiles([filteredpath]);
         }
       });
     } else  {
-      res.status(404).send('Not found');
+      res.status(422).send('Unprocessable Entity');
     }
   } );
 
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/", async ( req, res ) => {
+  app.get( "/", async (req:express.Request, res:express.Response) => {
     res.send("try GET /filteredimage?image_url={{}}")
   } );
   

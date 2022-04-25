@@ -6,12 +6,12 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8082/filteredimage?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
+			"name": "http://localhost:8082/filteredimage?image_url=https://i1.wp.com/s1.wp.com/wp-content/themes/h4/landing/marketing/pages/hp-2022-free-pro/media/desktop/desktop-website-v2-2x.jpg",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{HOST}}/filteredimage?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
+					"raw": "http://{{HOST}}/filteredimage?image_url=https://i1.wp.com/s1.wp.com/wp-content/themes/h4/landing/marketing/pages/hp-2022-free-pro/media/desktop/desktop-website-v2-2x.jpg",
 					"protocol": "http",
 					"host": [
 						"{{HOST}}"
@@ -22,7 +22,7 @@
 					"query": [
 						{
 							"key": "image_url",
-							"value": "https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg"
+							"value": "https://i1.wp.com/s1.wp.com/wp-content/themes/h4/landing/marketing/pages/hp-2022-free-pro/media/desktop/desktop-website-v2-2x.jpg"
 						}
 					]
 				}
